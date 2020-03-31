@@ -8,10 +8,27 @@ fn subtraction (a: i32, b: i32) -> i32 {
 
 fn fibonacci (a: u32) -> u32 {
     if a != 0 && a != 1 {
-        print!("im the value of a { }", a);
         return fibonacci(a - 1) + fibonacci(a - 2);
     }
     a
+}
+
+fn gcd(a: u32, b: u32) -> u32 {
+    let gcd_result: u32;
+    if a >= b {
+        if a % b == 0 {
+            gcd_result = b
+        } else {
+           return gcd(b, a - b);
+        }
+    } else {
+        if b % a == 0 {
+            gcd_result = a
+        } else {
+            return gcd(b - a, a);
+        }
+    }
+    gcd_result
 }
 
 #[cfg(test)]
@@ -45,6 +62,36 @@ mod tests {
     #[test]
     fn test_fibonacci_sequence_nth_term() {
         assert_eq!(fibonacci(3), 2);
+    }
+
+    #[test]
+    fn test_gcd_of_multiples() {
+        assert_eq!(gcd(4, 2), 2);
+    }
+
+    #[test]
+    fn test_gcd_order_of_inputs_should_be_immaterial() {
+        assert_eq!(gcd(4, 12), 4);
+    }
+
+    #[test]
+    fn test_gcd_of_number_not_multiples_0f_each_other() {
+        assert_eq!(gcd(12, 8), 4);
+    }
+
+    #[test]
+    fn test_gcd_if_the_input_data_are_same() {
+        assert_eq!(gcd(45, 45), 45);
+    }
+
+    #[test]
+    fn test_gcd_of_number_not_multiples_0f_each_other_x() {
+        assert_eq!(gcd(45, 47), 1);
+    }
+
+    #[test]
+    fn test_gcd_order_of_inputs_should_be_immaterial_and_input_data_are_not_multiples() {
+        assert_eq!(gcd(8, 12), 4);
     }
 }
 
