@@ -32,6 +32,10 @@ fn gcd(a: u32, b: u32) -> u32 {
     gcd_result
 }
 
+fn main() {
+    println!("Welcome To Rust And TDD");
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
