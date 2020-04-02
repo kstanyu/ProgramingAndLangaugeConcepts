@@ -2,11 +2,11 @@ pub fn add (a: i32, b: i32) -> i32 {
     a + b
 }
 
-fn subtraction (a: i32, b: i32) -> i32 {
+pub fn subtraction (a: i32, b: i32) -> i32 {
     a - b
 }
 
-fn fibonacci (a: u32) -> u32 {
+pub fn fibonacci (a: u32) -> u32 {
     if a != 0 && a != 1 {
         print!("im the value of a { }", a);
         return fibonacci(a - 1) + fibonacci(a - 2);
@@ -14,7 +14,7 @@ fn fibonacci (a: u32) -> u32 {
     a
 }
 
-fn gcd(a: u32, b: u32) -> u32 {
+pub fn gcd(a: u32, b: u32) -> u32 {
     let gcd_result: u32;
     if a >= b {
         if a % b == 0 {
