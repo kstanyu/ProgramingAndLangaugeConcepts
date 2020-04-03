@@ -8,7 +8,6 @@ pub fn subtraction (a: i32, b: i32) -> i32 {
 
 pub fn fibonacci (a: u32) -> u32 {
     if a != 0 && a != 1 {
-        print!("im the value of a { }", a);
         return fibonacci(a - 1) + fibonacci(a - 2);
     }
     a
@@ -37,6 +36,7 @@ fn main() {
 }
 
 #[cfg(test)]
+
 mod tests {
     use super::*;
 
