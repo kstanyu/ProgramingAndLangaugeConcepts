@@ -42,6 +42,17 @@ mod tests {
     }
 
     #[test]
+    fn test_adding_negative_numbers() {
+       assert_eq!(add(-1,-4), -5)
+    }
+
+    #[test]
+    fn test_additing_positive_and_negative() {
+        assert_eq!(add(1,-2), -1);
+        assert_eq!(add(2, -1), 1)
+    }
+
+    #[test]
     fn test_subtraction() {
         assert_eq!(subtraction(1,2), -1)
     }
