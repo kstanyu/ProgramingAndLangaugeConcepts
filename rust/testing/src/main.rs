@@ -58,9 +58,22 @@ mod tests {
     }
 
     #[test]
+    fn test_subtraction_two_negative_numbers() {
+        assert_eq!(subtraction(-1,-2), 1);
+        assert_eq!(subtraction(-7, -5), -2)
+    }
+
+    #[test]
+    fn test_subtraction_a_postive_and_negative_number() {
+        assert_eq!(subtraction(1,-2), 3);
+        assert_eq!(subtraction(-6, 1), -7)
+    }
+
+    #[test]
     fn test_fibonacci_sequence_first_term() {
         assert_eq!(fibonacci(0), 0);
     }
+
     #[test]
     fn test_fibonacci_sequence_second_term() {
         assert_eq!(fibonacci(1), 1);
