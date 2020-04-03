@@ -15,20 +15,16 @@ pub fn fibonacci (a: u32) -> u32 {
 
 pub fn gcd(a: u32, b: u32) -> u32 {
     let gcd_result: u32;
-    if a >= b {
-        if a % b == 0 {
-            gcd_result = b
-        } else {
-           return gcd(b, a - b);
-        }
-    } else {
-        if b % a == 0 {
-            gcd_result = a
-        } else {
-            return gcd(b - a, a);
-        }
+
+    match a >= b {
+        true =>
+            match a % b == 0 {
+                true => gcd_result = b,
+                _ => return gcd(b, a - b),
+        },
+        _ => return gcd(b, a),
     }
-    gcd_result
+  gcd_result
 }
 
 fn main() {
