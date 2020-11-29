@@ -1,1 +1,1 @@
-# Intended to learning new Programming Languages and concepts.
+# Giving rust a try.
